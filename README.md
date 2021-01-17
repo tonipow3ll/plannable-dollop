@@ -1,1 +1,2 @@
-# plannable-dollop
+# plannable-dollop, Day Planner Assignment 
+
