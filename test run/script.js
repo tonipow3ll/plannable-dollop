@@ -12,19 +12,19 @@ let text = document.querySelector('.text')
 let storedEvents = localStorage.getItem('userInput')
 let userEvents = []
 
-if(storedEvents){
-    text.textContent = storedEvents;
-}
+// if(storedEvents){
+//     text.textContent = storedEvents;
+// }
 
-$('.storage').on('keyup', letters => {
-    text.textContent = letters.target.value;
-})
-
-//original function to write letters to top of page 
-// storageInput.addEventListener('.storage', letters => {
-//     text.textContent = letters.target.value
-//   //  console.log(letters.target.value)
+// $('.storage').on('keyup', letters => {
+//     text.textContent = letters.target.value;
 // })
+
+//original function to write letters to top of page
+storageInput.addEventListener('.storage', letters => {
+    text.textContent = letters.target.value
+  //  console.log(letters.target.value)
+})
 
 // writes items from local storage to page 
 const saveEvents = () => {
@@ -66,17 +66,21 @@ const saveEvents = () => {
 //     }
 // )
 
-$(".eventBtn").on('click', function () {
+$(".eventBtn").on('click', function (event) {
+    event.preventDefault();
     let $this = $(this);
     let userInfo = $this.closest('form').find('input').attr('data-time');
     let userText = $this.closest('form').find('input').val();
 
+
+
     userInfo = userText;
     localStorage.setItem('userInput', text.textContent)
+    saveEvents();
     
 })
 
-
+testZ
  // end script
 });
 
