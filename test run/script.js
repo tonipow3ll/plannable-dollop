@@ -12,59 +12,27 @@ let text = document.querySelector('.text')
 let storedEvents = localStorage.getItem('userInput')
 let userEvents = []
 
-// if(storedEvents){
-//     text.textContent = storedEvents;
-// }
-
-// $('.storage').on('keyup', letters => {
-//     text.textContent = letters.target.value;
-// })
+if(storedEvents){
+    text.textContent = storedEvents;
+}
 
 //original function to write letters to top of page
-storageInput.addEventListener('.storage', letters => {
-    text.textContent = letters.target.value
-  //  console.log(letters.target.value)
+// storageInput.addEventListener('.storage', letters => {
+//     text.textContent = letters.target.value
+//   //  console.log(letters.target.value)
+// })
+
+$('.storage').on("keyup", function(letters) {
+    text.textContent = letters.target.value;
 })
 
 // writes items from local storage to page 
 const saveEvents = () => {
-    localStorage.setItem('userInput', text.textContent)
+    localStorage.setItem('userInput', text.textContent);
 }
 
-// listens for click on 'event buttons' 
 
-// $(".eventBtn").on("click", function(event){
-//     event.preventDefault();
-//     let newEvents = $(".text").val().trim();
-//     userEvents.push(newEvents);
-//     saveEvents();
-// })
 
-// below will write to storage, AND save the 'event' to local storage
-// $(".eventBtn").on("click", function(event){
-//     event.preventDefault();   
-//     let newEvents = $(".text").val().trim();
-//     let pastEvents = JSON.stringify(storedEvents);
-//     // let para = $("<p>").append(newEvents); 
-//     //will need the below for 'past' events
-//     let para = $("<p>").text( $("input").val());
-//     userEvents.push(newEvents);
-//     $("#write1").append(para)
-//     saveEvents();
-//     }
-// )
-// $("#10AM").on("click", function(event){
-//     event.preventDefault();   
-//     let newwEvents = $(".text").val().trim();
-//     let pastEvents = JSON.stringify(storedEvents);
-//     // let para = $("<p>").append(newEvents); 
-//     //will need the below for 'past' events
-//     let para = $("<p>").text("10AM event: " + $("input").val());
-//     userEvents.push(newwEvents);
-//     $("#write1").append(para)
-//     saveEvents();
-//     }
-// )
 
 $(".eventBtn").on('click', function (event) {
     event.preventDefault();
@@ -72,15 +40,13 @@ $(".eventBtn").on('click', function (event) {
     let userInfo = $this.closest('form').find('input').attr('data-time');
     let userText = $this.closest('form').find('input').val();
 
-
-
     userInfo = userText;
     localStorage.setItem('userInput', text.textContent)
     saveEvents();
     
 })
 
-testZ
+
  // end script
 });
 
