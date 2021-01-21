@@ -1,8 +1,7 @@
 // function to show time hours on the left side of page
 //      gray out hours if 'past' hour.. ex 10AM - 9AM will be grayed out
-// function for SAVING events to certain hours
-// function for saving events to local storage
-// func for creating elements?!
+// make a class for buttons - tie each button to a certain hour / index in the array
+// add an event listener for the 'buttons' so if 'save' is clicked, it will create an element on the CLOSEST child - look up docs
 
 //later - fix your buttons 
 
@@ -33,20 +32,31 @@ function setAppointments(){
 
 // read day hours from local storage // below works
 function readAppointments(){
-  let schedule =  JSON.parse(localStorage.getItem('dayHours'))
-    $('.input').each(function (i, element) {
-// this function is returning value of 'user event', need to make this 'WRITE' to the html page 
-        $("ul").append(schedule[i].userEvent)
-        console.log(schedule[i].userEvent)
-    })
-}
+  let hours = 9;
+  let schedule =  JSON.parse(localStorage.getItem('dayHours'));
+
+   for (i=0; i< schedule.length; i++)
+   schedule.push("")
+};
+
+ if (userEvent !== null) {
+     userEvent = schedule;
+     for (i=0; i < userEvent.length; i++)
+     $('["data-index=$(i)"]').text(userEvent[i])
+ }
+// this worked, testing something
+//     $('.input').each(function (i, element) {
+// // this function is returning value of 'user event', need to make this 'WRITE' to the html page 
+//         $("ul").append(schedule[i].userEvent)
+//         console.log(schedule[i].userEvent)
+   // })
 
 
 // store 'hours in day' in array/ojbect.... add a conditional to show if time is past x show something
 // loop over this array - create conditional in that - IF 10AM, 'blank out(add class, 'past') 9AM, keep looping
 dayHours = 
 [
-   {hour: "9AM", userEvent: ""},
+   {hour: "9AM", userEvent: "get to work"},
    {hour: "10AM" ,userEvent: ""},
    {hour: "11AM" , userEvent: ""},
    {hour: "12PM", userEvent: ""},
@@ -58,7 +68,7 @@ dayHours =
 ]
 
 function timeOfDay(){
-   for (dayHours = 0; dayHours >= 9; dayHours++){
+   for (dayHours = 0; dayHours.length < 9; dayHours++){
        $('body').addClass('past');
    }
    console.log(dayHours);
