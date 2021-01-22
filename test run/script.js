@@ -7,42 +7,49 @@ const currentDate = dayjs().format('MMM D, dddd');
 const currentTime = dayjs().format('h:mm');
     $("#currentTime").text(currentTime);
 
-let storageInput = document.querySelector('.storage')
+// let storageInput = document.querySelector('.storage')
 let text = document.querySelector('.text')
-let storedEvents = localStorage.getItem('userInput')
-let userEvents = []
+// let storedEvents = JSON.parse(localStorage.getItem('userInput'));
+let userEvents = [];
 
-if(storedEvents){
-    text.textContent = storedEvents;
-}
 
 //----------READ ME------------
 // if time has passed, loop over 'userevents' (empty array), and add classes to past times (use data-index in html)
 //read docs
 //----------READ ME------------
-for (i = 0; i > userEvents; i++){
+let userEventsLen = 9;
+let storedEvents = JSON.parse(localStorage.getItem("userEvents"));
+function eventsArr(){
+    userEvents = [];
+    for (i = 0; i < userEventsLen; i++){
+        userEvents.push("");
+    //    $('body').addClass('past');
+    };
+    console.log(userEvents);
+ }
 
-}
+ if (storedEvents !== null){
+     userEvents = storedEvents;
+     for (i=0; i < userEventsLen; i++){
+         $('input').text(userEvents[i])
+     }
+ }
+
 
 //probably don't need this -but looks pretty neat
 $('.storage').on("keyup", function(letters) {
     // (this).text.textContent = letters.target.value;
-    text.textContent = letters.target.value;
+   text.textContent = letters.target.value;
+    $(this).closest('p').textContent = letters.target.value;
 })
 
 // writes items from local storage to page 
 const saveEvents = () => {
-    localStorage.setItem('userInput', text.textContent);
+    localStorage.setItem('userInput', JSON.stringify(text.textContent))
+    //localStorage.setItem('userInput', text.textContent);
+    userEvents.push("")
+ 
 }
-
-// loop over everything, if time is passed - will add class
-function timeOfDay(){
-    for (userEvents = 0; userEvents.length < 9; userEvents++){
-        $('body').addClass('past');
-        
-    }
-    console.log(userEvents);
- }
 
 
 // when save button is clicked - saves everything to local storage
@@ -53,16 +60,17 @@ $(".eventBtn").on('click', function (event) {
     let userText = $this.closest('form').find('input').val();
 
     userInfo = userText;
-    localStorage.setItem('userInput', text.textContent)
-    userEvents.push("")
+    localStorage.setItem('userInput', JSON.stringify(userEvents))
+    //localStorage.setItem('userInput', text.textContent)
+
     saveEvents();
 })
 
-timeOfDay();
+eventsArr();
  // end script
 });
 
-whatDayIsIt();
+// whatDayIsIt();
 
 // --------------NOTES 
 
