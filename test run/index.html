@@ -17,7 +17,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- google fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
         <!-- stylesheet -->
         <link rel="stylesheet" href="style.css" />
         <!-- jquery -->
@@ -29,78 +30,71 @@
 </head>
 
 <body>
-    <h1>time date stuff </h1>
-    <h1 id="currentDay"></h1>
-    <h1 id="currentTime"></h1>
+    <h1 class="header">Work Day Planner</h1>
+    <h1 class="header" id="currentDay"></h1>
+    <h1 class="header" id="currentTime"></h1>
     <div class="container">
-        <!-- <form>
-            <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit">9AM</button> -->
-            
-            <!-- <button class="eventBtn" id="10AM" type="submit">10AM</button>
-                <button class="eventBtn" id="11AM" type="submit">11AM</button>
-                <button class="eventBtn" id="12PM" type="submit">12PM</button>
-                <button class="eventBtn" id="1PM" type="submit">1PM</button>
-                <button class="eventBtn" id="2PM" type="submit">2PM</button>
-                <button class="eventBtn" id="3PM" type="submit">3PM</button>
-                <button class="eventBtn" id="4PM" type="submit">4PM</button>
-                <button class="eventBtn" id="5PM"type="submit">5PM</button> -->
-                <!-- <p id="write"></p>
-                </form> -->
-
                 <!-- do not delete this <p> line dumb dumb  -->
-                <p class="text"> </p> 
+                <!-- <p class="text"> </p>  -->
 
         <form data-time="9AM"> 
             <h3>9AM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
-            <p class="text"></p>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
+            <p class="text hide"></p>
         </form>
         <form data-time="10AM">
             <h3>10AM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
             <p class="text"></p>
         </form>
         <form data-time="11AM"> 
             <h3>11AM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
             <p class="text"></p>
         </form>
         <form data-time="12PM">
             <h3>12PM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
             <p class="text"></p>
         </form>
         <form data-time="1PM">
             <h3>1PM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
         </form>
         <form data-time="2PM">
             <h3>2PM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
         </form>
         <form data-time="3PM">
             <h3>3PM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
         </form>
         <form data-time="4PM">
             <h3>4PM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
         </form>
         <form data-time="5PM">
             <h3>5PM</h3>
             <input class="storage" placeholder="add event here">
-            <button class="eventBtn" id="9AM" type="submit"> <i class="material-icons">add</i></button>
+            <button class="eventBtn" type="submit"> <i class="material-icons">add_circle_outline</i></button>
         </form>
     </div>
+
+    <!-- footer -->
+    <footer class="footer mt-auto py-3 fixed-bottom">
+        <div class="container text-center">
+           <a href="https://www.linkedin.com/in/tonipowell13" target="blank" class="fab fa-linkedin-in fa-2x"></a>
+           <a href="https://tonipow3ll.github.io/" target="blank" class="fab fa-github fa-2x"></a>
+        </div>
+     </footer>
 
     <!-- Day JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.3/dayjs.min.js"

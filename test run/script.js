@@ -16,13 +16,17 @@ if(storedEvents){
     text.textContent = storedEvents;
 }
 
-//original function to write letters to top of page
-// storageInput.addEventListener('.storage', letters => {
-//     text.textContent = letters.target.value
-//   //  console.log(letters.target.value)
-// })
+//----------READ ME------------
+// if time has passed, loop over 'userevents' (empty array), and add classes to past times (use data-index in html)
+//read docs
+//----------READ ME------------
+for (i = 0; i > userEvents; i++){
 
+}
+
+//probably don't need this -but looks pretty neat
 $('.storage').on("keyup", function(letters) {
+    // (this).text.textContent = letters.target.value;
     text.textContent = letters.target.value;
 })
 
@@ -31,9 +35,17 @@ const saveEvents = () => {
     localStorage.setItem('userInput', text.textContent);
 }
 
+// loop over everything, if time is passed - will add class
+function timeOfDay(){
+    for (userEvents = 0; userEvents.length < 9; userEvents++){
+        $('body').addClass('past');
+        
+    }
+    console.log(userEvents);
+ }
 
 
-
+// when save button is clicked - saves everything to local storage
 $(".eventBtn").on('click', function (event) {
     event.preventDefault();
     let $this = $(this);
@@ -42,13 +54,15 @@ $(".eventBtn").on('click', function (event) {
 
     userInfo = userText;
     localStorage.setItem('userInput', text.textContent)
+    userEvents.push("")
     saveEvents();
-    
 })
 
-
+timeOfDay();
  // end script
 });
+
+whatDayIsIt();
 
 // --------------NOTES 
 
@@ -62,3 +76,15 @@ $(".eventBtn").on('click', function (event) {
 // movieDiv.append(pOne);
 
 // when 9AM button is clicked, save event and show '9AM -i have stuff to do here- 
+
+// $(".eventBtn").on("click", function(event){
+    //     event.preventDefault();   
+    //     let newEvents = $(".text").val().trim();
+    //     let pastEvents = JSON.stringify(storedEvents);
+    //     // let para = $("<p>").append(newEvents); 
+    //     //will need the below for 'past' events
+    //     let para = $("<p>").text( $("input").val());
+    //     userEvents.push(newEvents);
+    //     $("#write1").append(para)
+    //     saveEvents();
+    //     }

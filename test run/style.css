@@ -1,0 +1,38 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+.header{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.timesup{
+    background-color: hotpink;
+}
+.past{
+    background-color: red;
+}
+
+.container{
+    display: flexbox;
+    columns: grid;
+    max-width: 75%;
+    background-color: #576574;
+} 
+
+body{
+    background-color: #222f3e;
+    color: #1dd1a1;
+}
+input {
+    background-color: transparent;
+    width: 90%;
+    border: none;
+    color: #1dd1a1;
+}
+.hide{
+    display: none;
+}
+/* body{
+    background: hotpink;
+} */
