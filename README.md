@@ -1,13 +1,14 @@
 #  Day Planner Assignment 
 
-## For this assignment - we were tasked with making a daily planner for working hours (9AM-5PM)
-### A user can load the application.....
+## I was tasked with making a daily planner for working hours (9AM-5PM)
+### A user can load the application and save events to different time slots. 
+
 
 
 <!-- screen shot below -->
 <!-- ![Screen Shot 2020-12-10 at 18 24 25](https://user-images.githubusercontent.com/72999798/104847024-bab4e000-58ab-11eb-9f4a-ece9a77d05c3.png) -->
 
-<!-- deployed application link below -->
+<!-- View the deployed application here  -->
 
 <!-- [View the deployed application here]( https://tonipow3ll.github.io/Code-Quiz/) -->
 
@@ -16,7 +17,7 @@
 
 # Credits
 #### Google Fonts was used for all fonts on this application. 
-#### Font Awesome was used for.......
+#### Materialize was used for the save icons. 
 ### Many thanks to [Scott Byer](https://github.com/switch120), [Mike Fearly](https://michaelfearnley.com/) and Bobby Hoffman- for sharing their knowledge with us! 
  
 
