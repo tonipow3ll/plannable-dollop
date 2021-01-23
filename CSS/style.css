@@ -14,7 +14,7 @@
 }
 
 .container{
-    display: flexbox;
+    /* display: flex; */
     columns: grid;
     max-width: 75%;
     background-color: #576574;
