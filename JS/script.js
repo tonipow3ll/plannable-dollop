@@ -16,7 +16,7 @@ $(document).ready(function () {
     //----------READ ME------------
     let userEvents = [];
     let userEventsLen = 9;
-    let storedEvents = JSON.parse(localStorage.getItem("userEvents"));
+    let storedEvents = localStorage.getItem("userInput");
 
     function eventsArr(){
         userEvents = [];
@@ -25,36 +25,51 @@ $(document).ready(function () {
         //    $('body').addClass('past');
         };
      }
-    
+     //writing the most recent event to the console, get this to write to the input box 
+    function writeInput(){
      if (storedEvents !== null){
-        //  userEvents = storedEvents;
-         for (i=0; i < userEventsLen; i++){
-             $('input').text(storedEvents[i])
-         }
+         console.log(storedEvents)
      }
+    }
     //probably don't need this -but looks pretty neat
     $('.storage').on("keyup", function(letters) {
-        // (this).text.textContent = letters.target.value;
        text.textContent = letters.target.value;
-        $(this).find().closest('p').textContent = letters.target.value;
+    //   localStorage.setItem('userInput', JSON.stringify(text.textContent))
+
     })
-    // writes items from local storage to page 
-   function saveEvents () {
-        localStorage.setItem('userInput', JSON.stringify(text.textContent))
-    }  
+
     
-    // when save button is clicked - saves everything to local storage
+    
+    //original function for storing to LS below 
     $(".eventBtn").on('click', function (event) {
-        event.preventDefault();
-    
-        localStorage.setItem('userInput', JSON.stringify(userEvents))
+            event.preventDefault();
+            localStorage.setItem('userInput', text.textContent)
+           // localStorage.setItem('userInput', JSON.stringify(userEvents))
+            userEvents.push("");
         
-    
-        saveEvents();
-    })
-    
-    eventsArr();
-     // end script
+        })
+        
+        eventsArr();
+        writeInput();
+        // end script
     });
     
-   
+    
+    
+    
+        // $(".eventBtn").on("click", function(event){
+        //     event.preventDefault();
+        //     $('input[type="text"]').each(function(){
+        //         let id = $(this).attr('id');
+        //         let value = $(this).val();
+        //         localStorage.setItem(id,value);
+        //     });
+        // });
+    
+        // $("#load").on('click', function(){
+        //     $('input[type="text"]').each(function(){
+        //         let id=$(this).attr('id');
+        //         let value = localStorage.getItem(id);
+        //         $(this).val(value);
+        //     });
+        // });
