@@ -4,7 +4,7 @@ $(document).ready(function () {
     const currentDate = dayjs().format('MMM D, dddd');
         $("#currentDay").text(currentDate);
             
-    const currentTime = dayjs().format('h:mm');
+    const currentTime = dayjs().format('h:mm:s');
         $("#currentTime").text(currentTime);
 
     let text = document.querySelector('.text')
@@ -21,30 +21,23 @@ $(document).ready(function () {
         for (i=0; i <= 23; i++) {
             timeBlocks = i;
             hour = dayjs().format('h');
-            if (hour > i){
+            if (hour < i){
                 $(".form").addClass('past');
             }
             else if (hour === i){
                 $(".form").addClass('present')
             }
-            else if (hour < i){
+            else if (hour > i){
                 $(".form").addClass('future')
             }
         }
     }
 
 
-    let userEvents = [];
-    let userEventsLen = 9;
+   
     let storedEvents = localStorage.getItem("userInput");
 
-    function eventsArr(){
-        userEvents = [];
-        for (i = 0; i < userEventsLen; i++){
-            userEvents.push("");
-    
-        };
-     }
+   
      //writing the most recent event to the console, get this to write to the input box 
     function writeInput(){
      if (storedEvents !== null){
@@ -64,33 +57,12 @@ $(document).ready(function () {
     $(".eventBtn").on('click', function (event) {
             event.preventDefault();
             localStorage.setItem('userInput', text.textContent)
-           // localStorage.setItem('userInput', JSON.stringify(userEvents))
-            userEvents.push("");
         
         })
         
-        eventsArr();
+        // eventsArr();
         writeInput();
         changeTime();
         // end script
     });
     
-    
-    
-    
-        // $(".eventBtn").on("click", function(event){
-        //     event.preventDefault();
-        //     $('input[type="text"]').each(function(){
-        //         let id = $(this).attr('id');
-        //         let value = $(this).val();
-        //         localStorage.setItem(id,value);
-        //     });
-        // });
-    
-        // $("#load").on('click', function(){
-        //     $('input[type="text"]').each(function(){
-        //         let id=$(this).attr('id');
-        //         let value = localStorage.getItem(id);
-        //         $(this).val(value);
-        //     });
-        // });
