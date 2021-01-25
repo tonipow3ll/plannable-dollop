@@ -25,7 +25,7 @@ $(document).ready(function () {
                 $(".form").addClass('past');
             }
             else if (hour === i){
-                $(".form").addClass('.present')
+                $(".form").addClass('present')
             }
             else if (hour < i){
                 $(".form").addClass('future')
@@ -50,7 +50,7 @@ $(document).ready(function () {
      if (storedEvents !== null){
          console.log(storedEvents)
          // something wrong in this line 
-         //document.getElementById('storage').innerHTML = storedEvents.value;
+       // document.getElementsByClassName("form").innerHTML = storedEvents.value;
 
      }
     }
