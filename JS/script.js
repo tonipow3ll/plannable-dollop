@@ -7,7 +7,7 @@ $(document).ready(function () {
     const currentTime = dayjs().format('h:mm:s');
         $("#currentTime").text(currentTime);
 
-    let text = document.querySelector('.text')
+    let text = document.querySelector('.storage')
     let timeBlocks = document.querySelector('.form')
     
     //----------READ ME------------
@@ -33,8 +33,6 @@ $(document).ready(function () {
         }
     }
 
-
-   
     let storedEvents = localStorage.getItem("userInput");
 
    
@@ -43,6 +41,7 @@ $(document).ready(function () {
      if (storedEvents !== null){
          console.log(storedEvents)
          // something wrong in this line 
+         $("#9AMInput").text(storedEvents);
        // document.getElementsByClassName("form").innerHTML = storedEvents.value;
 
      }
