@@ -6,15 +6,15 @@
     align-items: center;
     text-align: center;
 }
-.timesup{
-    background-color: hotpink;
-}
 .past{
-    background-color: red;
+    background-color: #10ac84;
+   
+}
+.future{
+    background-color: #576574;
 }
 
 .container{
-    /* display: flex; */
     columns: grid;
     max-width: 75%;
     background-color: #576574;
